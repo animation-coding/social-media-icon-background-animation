@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.overlay
+{
+    height: 200vw;
+    width: 200vw;
+    border-radius: 50%;
+   /* background: #000;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.nav
+{
+    background: #fff;
+    padding: 22px 45px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 15px rgba(179, 179, 179, 0.185);
+    position: relative;
+    z-index: 1000;
+}
+.tabs
+{
+    display: flex;
+    width: 430px;
+    justify-content: space-around;
+    list-style-type: none;
+}
+.tab
+{
+   padding: 13px 23px;
+   background: #e0efff;
+   color: #58a6ff; 
+   position: relative;
+   margin-right: 15px;
+   border-radius: 55px;
+   text-align: center;
+   white-space: nowrap;
+   transition: 0.3s ease;
+   overflow: hidden;
+   cursor: pointer;
+   max-width: 0px;
+   flex-basis: 120px;
+}
+.tab_is-active
+{
+    max-width: 100px;
+    box-shadow: 7px 7px 15px rgba(124, 124, 124, 0.096);
+}
+.tab_is-active .tab_name
+{
+    opacity: 1;
+}
+.tab-circle
+{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid #58a6ff;
+    z-index: 10;
+    opacity: 0;
+    left: 30px;
+    pointer-events: none;
+}
+.tab_icon
+{
+    margin-right: 1px;
+    font-size: 20px;
+    vertical-align: middle;
+    position: relative;
+    right: 7.7px;
+    top: 0px;
+}
+.tab_name
+{
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+    transition: 0.3s ease;
+    top: 1px;
+    opacity: 0;
+}
+.tab_github
+{
+    background: #cfffd7;
+    color: #4caf50;
+}
+.tab_twitter
+{
+    background: #d0e8fb;
+    color: #58a6ff;
+}
+
+.tab_youtube
+{
+    background: #fccfcf;
+    color: #f44336;
+}
+.tab_dribbble
+{
+    background: #ffddeb;
+    color: #de4383;
+}
+.tab_facebook
+{
+    background: #cee9ff;
+    color: #0b8ef7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

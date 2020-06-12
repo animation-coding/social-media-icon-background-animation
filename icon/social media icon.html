@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Icon Animation</title>
+<!--====font-awesome===--->    
+<link rel="stylesheet" href="css/font-awesome.min.css"> 
+<link rel="stylesheet" href="css/Style.css">
+
+</head>
+<body>
+    
+<div class="overlay"></div>    
+
+<div class="nav">
+    <ul class="tabs">
+        <li class="tabs_item tab tab_github tab_is-active">
+            <div class="tab-circle"></div>
+            <i class="fa fa-github tab_icon"></i>
+            <span class="tab_name">Github</span>
+        </li>
+        <li class="tabs_item tab tab_twitter">
+            <div class="tab-circle"></div>
+            <i class="fa fa-twitter tab_icon"></i>
+            <span class="tab_name">Twitter</span>
+        </li>
+        <li class="tabs_item tab tab_youtube">
+            <div class="tab-circle"></div>
+            <i class="fa fa-youtube tab_icon"></i>
+            <span class="tab_name">Youtube</span>
+        </li>
+        <li class="tabs_item tab tab_dribbble">
+            <div class="tab-circle"></div>
+            <i class="fa fa-dribbble tab_icon"></i>
+            <span class="tab_name">Dribbble</span>
+        </li>
+        <li class="tabs_item tab tab_facebook">
+            <div class="tab-circle"></div>
+            <i class="fa fa-facebook tab_icon"></i>
+            <span class="tab_name">Facebook</span>
+        </li>
+
+    </ul>
+</div>
+<!---===http://greensock.com--> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+  
+<script>
+let tabs = document.querySelectorAll('.tab') 
+let overlay = document.querySelector('.overlay')   
+
+let firstActive = document.querySelector(".tab_is-active")
+let activeColor = getComputedStyle(firstActive).color;
+overlay.style.background = activeColor;
+document.body.style.background = activeColor;
+
+tabs.forEach(tab =>
+{
+    tab.addEventListener('click', function()
+    {
+        let tl = new TimelineLite();
+        let accentColor = getComputedStyle(this).color;
+        document.body.style.background = accentColor;
+        this.children[0].style.borderColor = accentColor;
+
+        if(!this.classList.contains('tab_is-active'))
+        {
+            tl.fromTo(this.children[0], 0.4,
+            {scale:0, opacity: 1}, {scale: 3, opacity: 0}, "0")
+            overlay.style.background = accentColor;
+
+            tl.fromTo(overlay, 1,
+            {scale:0, opacity: 0}, {scale: 1, opacity: 1}, "0");
+        }
+        tabs.forEach(tab => tab.classList.remove("tab_is-active"));
+        this.classList.add("tab_is-active");
+    })
+})
+</script>
+
+
+</body>
+</html>
